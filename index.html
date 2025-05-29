@@ -4,237 +4,190 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projeto 2 Toke - Escolinha de Futebol</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
-
     body {
-      background: #f4f6f8;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f0f8ff;
       color: #333;
     }
 
     header {
-      background: linear-gradient(to right, #0066cc, #004080);
+      background-color: #007BFF;
       color: white;
-      padding: 40px 20px;
+      padding: 20px;
       text-align: center;
     }
 
     header img {
-      width: 120px;
-      margin-bottom: 20px;
+      width: 100px;
+      margin-bottom: 10px;
+      border-radius: 50%;
     }
 
     nav {
-      background-color: #003366;
+      background-color: #0056b3;
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
+      flex-wrap: wrap;
     }
 
     nav a {
       color: white;
-      padding: 15px 25px;
+      padding: 15px 20px;
       text-decoration: none;
-      font-weight: 500;
-      transition: background 0.3s;
     }
 
     nav a:hover {
-      background-color: #002244;
+      background-color: #003f7f;
     }
 
     main {
-      max-width: 1100px;
-      margin: auto;
-      padding: 40px 20px;
+      padding: 20px;
     }
 
-    section {
-      margin-bottom: 60px;
-    }
-
-    h2 {
-      color: #004080;
-      font-size: 2rem;
-      margin-bottom: 20px;
+    .section {
+      margin-bottom: 40px;
       text-align: center;
-    }
-
-    p {
-      font-size: 1.1rem;
-      text-align: center;
-    }
-
-    .info-box {
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      padding: 30px;
-      margin-top: 30px;
-    }
-
-    .info-box table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    .info-box th, .info-box td {
-      padding: 12px;
-      text-align: left;
-      border-bottom: 1px solid #eee;
-    }
-
-    .info-box th {
-      background-color: #0066cc;
-      color: white;
     }
 
     .contact-buttons {
       display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
-      margin-top: 20px;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin-top: 15px;
     }
 
     .contact-buttons a {
-      background: #007bff;
-      color: white;
       text-decoration: none;
       padding: 12px 20px;
+      background-color: #007BFF;
+      color: white;
       border-radius: 8px;
       font-weight: bold;
-      transition: background 0.3s;
+      width: 250px;
+      text-align: center;
     }
 
     .contact-buttons a:hover {
-      background: #0056b3;
+      background-color: #0056b3;
     }
 
     form {
-      background: #ffffff;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      max-width: 600px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 500px;
       margin: auto;
-    }
-
-    label {
-      font-weight: 600;
-      margin-top: 15px;
-      display: block;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
 
     input, textarea, button {
+      display: block;
       width: 100%;
-      padding: 12px;
-      margin-top: 8px;
+      margin-bottom: 15px;
+      padding: 10px;
+      border-radius: 4px;
       border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 1rem;
     }
 
     button {
-      background: #0066cc;
+      background-color: #007BFF;
       color: white;
-      font-weight: bold;
       border: none;
-      margin-top: 20px;
-      transition: background 0.3s;
+      cursor: pointer;
     }
 
     button:hover {
-      background: #004080;
+      background-color: #0056b3;
     }
 
     footer {
-      background-color: #002244;
+      background-color: #0056b3;
       color: white;
       text-align: center;
-      padding: 30px;
-      margin-top: 40px;
+      padding: 20px;
+    }
+
+    @media (min-width: 600px) {
+      .contact-buttons {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="https://i.imgur.com/CmBvayF.png" alt="Logo Projeto 2 Toke">
-    <h1>Projeto 2 Toke</h1>
-    <p>Futebol com Educação e Cidadania</p>
+    <img src="https://i.imgur.com/CmBvayF.png" alt="Logo Projeto 2 Toke" />
+    <h1>Escolinha Projeto 2 Toke</h1>
+    <p><em>Formando campeões com educação e disciplina</em></p>
   </header>
+
   <nav>
     <a href="#home">Home</a>
     <a href="#sobre">Sobre</a>
-    <a href="#horarios">Horários</a>
     <a href="#contato">Contato</a>
     <a href="#formulario">Inscrição</a>
   </nav>
+
   <main>
-    <section id="home">
+    <section id="home" class="section">
       <h2>Quem Somos</h2>
-      <p>Projeto social que promove inclusão, educação e saúde por meio do futebol para crianças e adolescentes.</p>
+      <p>Somos um projeto social e esportivo que acredita no poder do esporte para transformar vidas. Trabalhamos com crianças de 5 a 12 anos, ensinando futebol com foco em educação, respeito, disciplina e trabalho em equipe.</p>
     </section>
 
-    <section id="sobre">
-      <h2>Nosso Trabalho</h2>
-      <p>Com treinos educativos e orientação profissional, ajudamos na formação pessoal e esportiva de jovens atletas.</p>
-    </section>
-
-    <section id="horarios">
+    <section id="sobre" class="section">
       <h2>Horários e Mensalidades</h2>
-      <div class="info-box">
-        <table>
-          <tr><th>Atividade</th><th>Dias</th><th>Horários</th><th>Mensalidade</th><th>Local</th></tr>
-          <tr><td>Funcional</td><td>Seg, Qua, Sex</td><td>19:30 às 20:30</td><td>R$ 40,00</td><td>Espaço Meu Xodó</td></tr>
-          <tr><td>Escolinha Planalto</td><td>Seg, Qua, Sex</td><td>17:30 às 19:00</td><td>R$ 100,00</td><td>Asseplan</td></tr>
-          <tr><td>Escolinha São José</td><td>Ter e Qui</td><td>08:00 às 09:30</td><td rowspan="3">R$ 130,00</td><td rowspan="3">São José</td></tr>
-          <tr><td>Escolinha São José</td><td>Terça</td><td>17:00 às 18:30</td></tr>
-          <tr><td>Escolinha São José</td><td>Quinta</td><td>16:30 às 17:30</td></tr>
-        </table>
-      </div>
+      <p><strong>Funcional</strong> (R$ 40,00): Segunda, Quarta e Sexta - 19:30 às 20:30<br>
+         Local: Espaço Meu Xodó, ao lado da Asseplan</p>
+      <p><strong>Escolinha Planalto/Asseplan</strong> (R$ 100,00): Segunda, Quarta e Sexta - 17:30 às 19:00</p>
+      <p><strong>Escolinha São José</strong> (R$ 130,00):<br>
+         Terça e Quinta - 08:00 às 09:30<br>
+         Terça - 17:00 às 18:30<br>
+         Quinta - 16:30 às 17:30</p>
     </section>
 
-    <section id="contato">
+    <section id="contato" class="section">
       <h2>Fale Conosco</h2>
       <div class="contact-buttons">
-        <a href="https://wa.me/5584987310194" target="_blank">WhatsApp</a>
-        <a href="https://www.instagram.com/projeto2toke2" target="_blank">Instagram</a>
-        <a href="mailto:peresferreira2006@yahoo.com.br">E-mail</a>
+        <a href="https://wa.me/5584987310194" target="_blank">WhatsApp Principal</a>
+        <a href="https://www.instagram.com/projeto2toke2" target="_blank">Instagram Principal</a>
+        <a href="mailto:peresferreira2006@yahoo.com.br" target="_blank">Gmail</a>
+        <a href="https://www.instagram.com/chuplanche2016" target="_blank">Instagram São José</a>
+        <a href="https://wa.me/5584996447477" target="_blank">WhatsApp Auxiliar</a>
       </div>
     </section>
 
-    <section id="formulario">
-      <h2>Inscreva-se</h2>
+    <section id="formulario" class="section">
+      <h2>Inscreva Seu Filho</h2>
       <form id="form-inscricao">
-        <label for="nome">Nome do Responsável</label>
+        <label for="nome">Nome do Responsável:</label>
         <input type="text" id="nome" required />
 
-        <label for="nome-crianca">Nome da Criança</label>
+        <label for="nome-crianca">Nome da Criança:</label>
         <input type="text" id="nome-crianca" required />
 
-        <label for="idade">Idade</label>
-        <input type="number" id="idade" min="5" max="17" required />
+        <label for="idade">Idade da Criança:</label>
+        <input type="number" id="idade" required min="5" max="12" />
 
-        <label for="telefone">Telefone</label>
+        <label for="telefone">Telefone de Contato:</label>
         <input type="tel" id="telefone" required />
 
-        <label for="mensagem">Mensagem (opcional)</label>
+        <label for="mensagem">Mensagem (opcional):</label>
         <textarea id="mensagem"></textarea>
 
         <button type="submit">Enviar via WhatsApp</button>
       </form>
     </section>
   </main>
+
   <footer>
-    <p>&copy; 2025 Projeto 2 Toke. Todos os direitos reservados.</p>
+    <p>&copy; 2025 Projeto 2 Toke | Desenvolvido com carinho por Professor Lourival</p>
   </footer>
+
   <script>
     document.getElementById('form-inscricao').addEventListener('submit', function(e) {
       e.preventDefault();
@@ -243,7 +196,9 @@
       const idade = document.getElementById('idade').value;
       const tel = document.getElementById('telefone').value;
       const msg = document.getElementById('mensagem').value;
-      const texto = `Olá! Gostaria de inscrever meu filho(a):%0AResponsável: ${nome}%0ANome da Criança: ${crianca}%0AIdade: ${idade}%0ATelefone: ${tel}%0AMensagem: ${msg}`;
+
+      const texto = `Olá, gostaria de inscrever meu filho(a):%0AResponsável: ${nome}%0ACriança: ${crianca}%0AIdade: ${idade}%0ATelefone: ${tel}%0AMensagem: ${msg}`;
+
       window.open(`https://wa.me/5584987310194?text=${texto}`, '_blank');
     });
   </script>
