@@ -301,4 +301,107 @@
 
       <div class="horarios-container">
         <div class="horario-box">
-          <
+          <h3>Escolinha São José</h3>
+          <p><strong>Endereço:</strong> Rua São José, 1815, Campo Society</p>
+          <p><strong>Horários:</strong></p>
+          <ul>
+            <li>Segunda e Quarta: 17h às 19h</li>
+            <li>Sábado: 9h às 11h</li>
+          </ul>
+        </div>
+
+        <div class="horario-box">
+          <h3>Campo Asseplan (Funcionário)</h3>
+          <p><strong>Endereço:</strong> Campo Asseplan, Planalto</p>
+          <p><strong>Horários:</strong></p>
+          <ul>
+            <li>Terça e Quinta: 17h às 19h</li>
+            <li>Sábado: 14h às 16h</li>
+          </ul>
+        </div>
+
+        <div class="horario-box">
+          <h3>Projeto 2 Toke Planalto</h3>
+          <p><strong>Endereço:</strong> Campo Asseplan, Planalto</p>
+          <p><strong>Horários:</strong></p>
+          <ul>
+            <li>Segunda, Quarta e Sexta: 17h às 19h</li>
+            <li>Sábado: 8h às 10h</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="section">
+      <h2>Contato</h2>
+      <p>Entre em contato conosco para dúvidas, informações e inscrições.</p>
+
+      <div class="contact-buttons">
+        <a href="https://wa.me/84987310194" target="_blank" rel="noopener noreferrer">WhatsApp: (84) 98731-0194</a>
+        <a href="https://www.instagram.com/projeto2toke2" target="_blank" rel="noopener noreferrer">Instagram: @projeto2toke2</a>
+        <a href="mailto:peresferreira2006@yahoo.com.br" target="_blank" rel="noopener noreferrer">Email: peresferreira2006@yahoo.com.br</a>
+      </div>
+    </section>
+
+    <section id="formulario" class="section">
+      <h2>Formulário de Inscrição</h2>
+      <form id="inscricaoForm">
+        <label for="nome">Nome Completo</label>
+        <input type="text" id="nome" name="nome" required />
+
+        <label for="idade">Idade</label>
+        <input type="number" id="idade" name="idade" min="5" max="14" required />
+
+        <label for="responsavel">Nome do Responsável</label>
+        <input type="text" id="responsavel" name="responsavel" required />
+
+        <label for="telefone">Telefone para Contato</label>
+        <input type="tel" id="telefone" name="telefone" pattern="[0-9\s\-\+\(\)]{8,15}" required placeholder="Ex: (84) 98731-0194" />
+
+        <label for="info">Informações Adicionais</label>
+        <textarea id="info" name="info" placeholder="Alguma informação extra?" rows="4"></textarea>
+
+        <button type="submit">Enviar Inscrição via WhatsApp</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Escolinha do Professor Lourival - Todos os direitos reservados
+  </footer>
+
+  <script>
+    const form = document.getElementById('inscricaoForm');
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const nome = encodeURIComponent(form.nome.value.trim());
+      const idade = encodeURIComponent(form.idade.value.trim());
+      const responsavel = encodeURIComponent(form.responsavel.value.trim());
+      const telefone = encodeURIComponent(form.telefone.value.trim());
+      const info = encodeURIComponent(form.info.value.trim());
+
+      if(idade < 5 || idade > 14){
+        alert('A idade deve ser entre 5 e 14 anos.');
+        return;
+      }
+
+      // Monta a mensagem para WhatsApp
+      const mensagem = 
+        `*Inscrição - Escolinha do Professor Lourival*%0A` +
+        `%0A*Nome do Atleta:* ${nome}%0A*Idade:* ${idade} anos%0A` +
+        `*Responsável:* ${responsavel}%0A*Telefone:* ${telefone}%0A` +
+        `*Informações adicionais:* ${info || 'Nenhuma'}`;
+
+      // Número para envio da mensagem (com código do país, sem espaços)
+      const numeroWhatsApp = '5584987310194';
+
+      // URL para abrir o WhatsApp com a mensagem pronta
+      const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensagem}`;
+
+      // Abre em nova aba
+      window.open(urlWhatsApp, '_blank');
+    });
+  </script>
+</body>
+</html>
