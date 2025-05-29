@@ -2,137 +2,275 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projeto 2 Toke - Escolinha de Futebol</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Escolinha do Professor Lourival</title>
   <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      background-color: #f0f4f8;
-      color: #333;
+      background-color: #121212;
+      color: #e0e0e0;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
     header {
-      background-color: #007BFF;
-      color: white;
+      background: linear-gradient(90deg, #0d47a1, #1976d2);
       padding: 30px 20px;
       text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
     }
 
     header img {
-      width: 100px;
-      margin-bottom: 15px;
+      width: 110px;
       border-radius: 50%;
+      border: 3px solid #64b5f6;
+      margin-bottom: 15px;
+      filter: drop-shadow(0 0 5px #64b5f6);
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #bbdefb;
+      margin-bottom: 8px;
+      text-shadow: 1px 1px 4px #0d47a1;
+    }
+
+    header p {
+      font-style: italic;
+      color: #90caf9;
+      font-weight: 500;
+      text-shadow: 1px 1px 3px #0d47a1;
     }
 
     nav {
-      background-color: #0056b3;
+      background-color: #0d47a1;
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.8);
     }
 
     nav a {
-      color: white;
-      padding: 15px 20px;
+      color: #e3f2fd;
+      padding: 18px 28px;
       text-decoration: none;
-      font-weight: bold;
-      transition: background-color 0.3s;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: background-color 0.3s ease;
     }
 
-    nav a:hover {
-      background-color: #003f7f;
+    nav a:hover,
+    nav a:focus {
+      background-color: #1565c0;
+      outline: none;
     }
 
     main {
-      padding: 30px 20px;
-      max-width: 1000px;
-      margin: auto;
+      flex-grow: 1;
+      max-width: 960px;
+      margin: 40px auto;
+      padding: 0 20px;
     }
 
     .section {
       margin-bottom: 50px;
+      text-align: center;
     }
 
     h2 {
-      color: #0056b3;
-      margin-bottom: 10px;
+      font-size: 2.4rem;
+      color: #64b5f6;
+      margin-bottom: 20px;
+      text-shadow: 0 0 8px #42a5f5;
     }
 
-    .info-box {
-      background: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      margin-top: 15px;
+    p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto 15px;
+      color: #cfd8dc;
+    }
+
+    .horarios-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 25px;
+      text-align: left;
+    }
+
+    .horario-box {
+      background: #1e1e1e;
+      border: 2px solid #1976d2;
+      border-radius: 12px;
+      padding: 25px 30px;
+      box-shadow: 0 0 15px #1976d2;
+      flex: 1 1 320px;
+      max-width: 340px;
+      transition: transform 0.3s ease;
+    }
+
+    .horario-box:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 25px #42a5f5;
+    }
+
+    .horario-box h3 {
+      color: #90caf9;
+      margin-bottom: 14px;
+      font-size: 1.6rem;
+      border-bottom: 2px solid #42a5f5;
+      padding-bottom: 6px;
+    }
+
+    .horario-box p,
+    .horario-box ul {
+      color: #b0bec5;
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
+    .horario-box ul {
+      list-style-type: disc;
+      margin-left: 20px;
+      padding-left: 0;
     }
 
     .contact-buttons {
       display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
       margin-top: 20px;
     }
 
     .contact-buttons a {
+      display: inline-block;
       text-decoration: none;
-      padding: 12px 20px;
-      background-color: #007BFF;
-      color: white;
+      padding: 14px 26px;
+      background: #1976d2;
+      color: #e3f2fd;
+      font-weight: 700;
       border-radius: 8px;
-      font-weight: bold;
+      width: 220px;
       text-align: center;
-      transition: background-color 0.3s;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 12px rgba(25, 118, 210, 0.8);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .contact-buttons a:hover {
-      background-color: #0056b3;
+    .contact-buttons a:hover,
+    .contact-buttons a:focus {
+      background-color: #42a5f5;
+      box-shadow: 0 6px 18px rgba(66, 165, 245, 0.9);
+      outline: none;
     }
 
     form {
-      background: #fff;
-      padding: 25px;
-      border-radius: 10px;
-      max-width: 500px;
-      margin: auto;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      background: #1e1e1e;
+      padding: 30px 25px;
+      border-radius: 12px;
+      max-width: 520px;
+      margin: 0 auto;
+      box-shadow: 0 0 25px #1976d2;
+      text-align: left;
     }
 
-    input, textarea, button {
+    label {
+      font-weight: 700;
+      margin-bottom: 8px;
       display: block;
+      color: #90caf9;
+      font-size: 1.1rem;
+    }
+
+    input,
+    textarea {
       width: 100%;
-      margin-bottom: 15px;
-      padding: 10px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-      font-size: 16px;
+      padding: 12px 14px;
+      border-radius: 6px;
+      border: 2px solid #1976d2;
+      background-color: #121212;
+      color: #e0e0e0;
+      font-size: 1rem;
+      margin-bottom: 20px;
+      transition: border-color 0.3s ease;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: #42a5f5;
+      outline: none;
+      box-shadow: 0 0 10px #42a5f5;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 90px;
     }
 
     button {
-      background-color: #28a745;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
+      width: 100%;
+      background-color: #1976d2;
+      color: #e3f2fd;
+      font-weight: 700;
+      font-size: 1.2rem;
+      padding: 14px 0;
       border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(25, 118, 210, 0.7);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
     }
 
-    button:hover {
-      background-color: #218838;
+    button:hover,
+    button:focus {
+      background-color: #42a5f5;
+      box-shadow: 0 7px 20px rgba(66, 165, 245, 0.9);
+      outline: none;
     }
 
     footer {
-      background-color: #003f7f;
-      color: white;
+      background-color: #0d47a1;
+      color: #e3f2fd;
       text-align: center;
-      padding: 20px;
-      font-size: 14px;
+      padding: 25px 20px;
+      font-size: 1rem;
+      box-shadow: 0 -4px 10px rgba(0,0,0,0.8);
+      margin-top: auto;
     }
 
-    @media (max-width: 600px) {
+    /* Responsividade */
+    @media (min-width: 768px) {
+      nav {
+        justify-content: center;
+      }
+
       .contact-buttons {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: row;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h2 {
+        font-size: 2rem;
+      }
+
+      nav a {
+        padding: 14px 16px;
+        font-size: 1rem;
       }
     }
   </style>
@@ -140,104 +278,22 @@
 <body>
   <header>
     <img src="https://i.imgur.com/CmBvayF.png" alt="Logo Projeto 2 Toke" />
-    <h1>Escolinha Projeto 2 Toke</h1>
+    <h1>Escolinha do Professor Lourival</h1>
     <p><em>Formando campeões com educação e disciplina</em></p>
   </header>
 
   <nav>
     <a href="#home">Home</a>
-    <a href="#sobre">Horários e Mensalidades</a>
-    <a href="#contato">Contatos</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#contato">Contato</a>
     <a href="#formulario">Inscrição</a>
   </nav>
 
   <main>
     <section id="home" class="section">
       <h2>Quem Somos</h2>
-      <div class="info-box">
-        <p>Somos um projeto social que trabalha com crianças de 5 a 12 anos, promovendo a formação esportiva e cidadã através do futebol. Buscamos incentivar valores como respeito, disciplina e cooperação.</p>
-      </div>
+      <p>Somos um projeto social e esportivo que acredita no poder do esporte para transformar vidas. Trabalhamos com atletas de 5 a 14 anos, ensinando futebol com foco em educação, respeito, disciplina e trabalho em equipe.</p>
     </section>
 
     <section id="sobre" class="section">
-      <h2>Horários, Locais e Mensalidades</h2>
-      <div class="info-box">
-        <h3>Funcional</h3>
-        <p><strong>Mensalidade:</strong> R$ 40,00</p>
-        <p><strong>Dias:</strong> Segunda, Quarta e Sexta</p>
-        <p><strong>Horário:</strong> 19:30 às 20:30</p>
-        <p><strong>Local:</strong> Espaço Meu Xodó (ao lado da Asseplan)</p>
-      </div>
-      <div class="info-box">
-        <h3>Escolinha Planalto / Asseplan</h3>
-        <p><strong>Mensalidade:</strong> R$ 100,00</p>
-        <p><strong>Dias:</strong> Segunda, Quarta e Sexta</p>
-        <p><strong>Horário:</strong> 17:30 às 19:00</p>
-        <p><strong>Local:</strong> Campo da Asseplan - Planalto</p>
-      </div>
-      <div class="info-box">
-        <h3>Escolinha São José</h3>
-        <p><strong>Mensalidade:</strong> R$ 130,00</p>
-        <p><strong>Dias e Horários:</strong></p>
-        <ul>
-          <li>Terça e Quinta - 08:00 às 09:30</li>
-          <li>Terça - 17:00 às 18:30</li>
-          <li>Quinta - 16:30 às 17:30</li>
-        </ul>
-        <p><strong>Local:</strong> Rua São José, 1815 - Campo Society</p>
-      </div>
-    </section>
-
-    <section id="contato" class="section">
-      <h2>Fale Conosco</h2>
-      <div class="contact-buttons">
-        <a href="https://wa.me/5584987310194" target="_blank">WhatsApp Principal</a>
-        <a href="https://www.instagram.com/projeto2toke2" target="_blank">Instagram Principal</a>
-        <a href="mailto:peresferreira2006@yahoo.com.br">E-mail</a>
-        <a href="https://www.instagram.com/chuplanche2016" target="_blank">Instagram do Auxiliar</a>
-        <a href="https://wa.me/5584996447477" target="_blank">WhatsApp do Auxiliar</a>
-      </div>
-    </section>
-
-    <section id="formulario" class="section">
-      <h2>Inscreva Seu Filho</h2>
-      <form id="form-inscricao">
-        <label for="nome">Nome do Responsável:</label>
-        <input type="text" id="nome" required />
-
-        <label for="nome-crianca">Nome da Criança:</label>
-        <input type="text" id="nome-crianca" required />
-
-        <label for="idade">Idade da Criança:</label>
-        <input type="number" id="idade" required min="5" max="12" />
-
-        <label for="telefone">Telefone de Contato:</label>
-        <input type="tel" id="telefone" required />
-
-        <label for="mensagem">Mensagem (opcional):</label>
-        <textarea id="mensagem"></textarea>
-
-        <button type="submit">Enviar via WhatsApp</button>
-      </form>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Projeto 2 Toke | Desenvolvido por Professor Lourival</p>
-  </footer>
-
-  <script>
-    document.getElementById('form-inscricao').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const nome = document.getElementById('nome').value;
-      const crianca = document.getElementById('nome-crianca').value;
-      const idade = document.getElementById('idade').value;
-      const tel = document.getElementById('telefone').value;
-      const msg = document.getElementById('mensagem').value;
-
-      const texto = `Olá, gostaria de inscrever meu filho(a):%0AResponsável: ${nome}%0ACriança: ${crianca}%0AIdade: ${idade}%0ATelefone: ${tel}%0AMensagem: ${msg}`;
-      window.open(`https://wa.me/5584987310194?text=${texto}`, '_blank');
-    });
-  </script>
-</body>
-</html>
+      <h2>Nosso Trabalho</h2
