@@ -3,99 +3,99 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Projeto 2 Toke - Escolinha de Futebol</title>
+  <title>Projeto 2 Toke - Futebol Infantil</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      background-color: #f0f8ff;
+      background: #f9f9f9;
       color: #333;
     }
 
     header {
-      background-color: #007BFF;
+      background-color: #007bff;
       color: white;
       padding: 20px;
       text-align: center;
     }
 
-    header img {
-      width: 120px;
-      margin-bottom: 10px;
-      border-radius: 50%;
-    }
-
     nav {
       background-color: #0056b3;
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
+      flex-wrap: wrap;
     }
 
     nav a {
       color: white;
       padding: 15px 20px;
       text-decoration: none;
+      font-weight: bold;
     }
 
     nav a:hover {
-      background-color: #003f7f;
+      background-color: #004494;
     }
 
-    main {
-      padding: 20px;
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
     }
 
-    .section {
-      margin-bottom: 40px;
+    h2 {
+      color: #007bff;
+    }
+
+    video {
+      width: 100%;
+      max-width: 720px;
+      display: block;
+      margin: 20px auto;
+      border-radius: 12px;
     }
 
     .contact-buttons {
       display: flex;
       flex-direction: column;
-      align-items: center;
       gap: 10px;
-      margin-top: 15px;
+      align-items: center;
+      margin-top: 20px;
     }
 
     .contact-buttons a {
+      background-color: #007bff;
+      color: white;
       text-decoration: none;
       padding: 12px 20px;
-      background-color: #007BFF;
-      color: white;
-      border-radius: 8px;
+      border-radius: 6px;
       font-weight: bold;
       width: 200px;
       text-align: center;
     }
 
-    .contact-buttons a:hover {
-      background-color: #0056b3;
-    }
-
     form {
       background: #fff;
       padding: 20px;
-      border-radius: 8px;
-      max-width: 500px;
-      margin: auto;
+      border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-top: 20px;
     }
 
     input, textarea, button {
-      display: block;
       width: 100%;
-      margin-bottom: 15px;
       padding: 10px;
-      border-radius: 4px;
+      margin-bottom: 15px;
+      border-radius: 6px;
       border: 1px solid #ccc;
     }
 
     button {
-      background-color: #007BFF;
+      background-color: #007bff;
       color: white;
       border: none;
       cursor: pointer;
+      font-weight: bold;
     }
 
     button:hover {
@@ -107,43 +107,7 @@
       color: white;
       text-align: center;
       padding: 20px;
-    }
-
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-    }
-
-    .gallery img {
-      width: 100%;
-      max-width: 300px;
-      border-radius: 8px;
-    }
-
-    .agenda {
-      background-color: #ffffff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      max-width: 700px;
-      margin: auto;
-    }
-
-    .agenda ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .agenda li {
-      margin-bottom: 10px;
-    }
-
-    video {
-      max-width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      margin-top: 40px;
     }
 
     @media (min-width: 600px) {
@@ -157,53 +121,77 @@
 <body>
 
   <header>
-    <img src="https://i.imgur.com/CmBvayF.png" alt="Logo Projeto 2 Toke" />
-    <h1>Escolinha Projeto 2 Toke</h1>
-    <p><em>Inscrições Abertas - Crianças de 5 a 12 anos</em></p>
+    <h1>Projeto 2 Toke</h1>
+    <p>Escolinha de Futebol - Transformando Vidas</p>
   </header>
 
   <nav>
     <a href="#home">Home</a>
-    <a href="#sobre">Sobre</a>
-    <a href="#fotos">Fotos</a>
-    <a href="#video">Vídeo</a>
-    <a href="#agenda">Agenda</a>
+    <a href="#quem-somos">Quem Somos</a>
+    <a href="#treinos">Treinos</a>
     <a href="#contato">Contato</a>
-    <a href="#formulario">Inscrição</a>
   </nav>
 
-  <main>
-    <section id="home" class="section">
-      <h2>Bem-vindo à Escolinha de Futebol</h2>
-      <p>Nosso projeto visa desenvolver o esporte e a disciplina em crianças de 5 a 12 anos, promovendo saúde, socialização e valores através do futebol.</p>
-    </section>
+  <section id="home">
+    <h2>Bem-vindo ao Projeto 2 Toke</h2>
+    <p>Nosso objetivo é proporcionar educação esportiva e cidadania através do futebol para crianças de 5 a 12 anos. Aqui, esporte é mais que lazer — é formação para a vida.</p>
+    <video controls>
+      <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+      Seu navegador não suporta o vídeo.
+    </video>
+  </section>
 
-    <section id="sobre" class="section">
-      <h2>Sobre o Professor</h2>
-      <p>Sou o Professor Lourival, apaixonado por esportes e dedicado ao desenvolvimento das crianças por meio do futebol. Com anos de experiência, tenho orgulho de liderar o Projeto 2 Toke.</p>
-    </section>
+  <section id="quem-somos">
+    <h2>Quem Somos</h2>
+    <p>O Projeto 2 Toke é liderado pelo Professor Lourival, que há mais de 10 anos dedica sua vida ao desenvolvimento infantil por meio do esporte. Com amor, disciplina e compromisso, buscamos o crescimento físico e emocional de cada criança.</p>
+  </section>
 
-    <section id="fotos" class="section">
-      <h2>Galeria de Fotos</h2>
-      <div class="gallery">
-        <img src="https://i.imgur.com/zS0RJpM.jpg" alt="Crianças jogando futebol 1">
-        <img src="https://i.imgur.com/KrxuOqV.jpg" alt="Crianças jogando futebol 2">
-        <img src="https://i.imgur.com/AtxyAXS.jpg" alt="Crianças treinando com cones">
-        <img src="https://i.imgur.com/dj9uXfR.jpg" alt="Crianças chutando a bola">
-        <img src="https://i.imgur.com/qa6vpcO.jpg" alt="Grupo reunido após treino">
-      </div>
-    </section>
+  <section id="treinos">
+    <h2>Agenda de Treinos</h2>
+    <ul>
+      <li><strong>Seg, Qua e Sex:</strong> Planalto (Asseplan), 17:30 às 19:00</li>
+      <li><strong>Ter e Qui (manhã):</strong> Arena São José, 08:00 às 09:30</li>
+      <li><strong>Ter (tarde):</strong> Arena São José, 17:00 às 18:30</li>
+      <li><strong>Qui (tarde):</strong> Arena São José, 16:30 às 17:30</li>
+    </ul>
+  </section>
 
-    <section id="video" class="section">
-      <h2>🎥 Vídeo dos Treinos</h2>
-      <video controls>
-        <source src="video.mp4" type="video/mp4">
-        Seu navegador não suporta a reprodução de vídeo.
-      </video>
-    </section>
+  <section id="contato">
+    <h2>Fale Conosco</h2>
+    <div class="contact-buttons">
+      <a href="https://wa.me/5584987310194" target="_blank">WhatsApp</a>
+      <a href="https://www.instagram.com/projeto2toke2" target="_blank">Instagram</a>
+      <a href="mailto:peresferreira2006@yahoo.com.br" target="_blank">Gmail</a>
+    </div>
 
-    <section id="agenda" class="section">
-      <h2>Agenda de Treinos</h2>
-      <div class="agenda">
-        <ul>
-          <li><strong>Segunda, Quarta
+    <form id="form-inscricao">
+      <h3>Inscreva seu filho</h3>
+      <input type="text" id="nome" placeholder="Nome do Responsável" required />
+      <input type="text" id="nome-crianca" placeholder="Nome da Criança" required />
+      <input type="number" id="idade" placeholder="Idade da Criança" required min="5" max="12"/>
+      <input type="tel" id="telefone" placeholder="Telefone de Contato" required />
+      <textarea id="mensagem" placeholder="Mensagem (opcional)"></textarea>
+      <button type="submit">Enviar para o WhatsApp</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Projeto 2 Toke | Desenvolvido com carinho por Professor Lourival</p>
+  </footer>
+
+  <script>
+    document.getElementById('form-inscricao').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const nome = document.getElementById('nome').value;
+      const crianca = document.getElementById('nome-crianca').value;
+      const idade = document.getElementById('idade').value;
+      const tel = document.getElementById('telefone').value;
+      const msg = document.getElementById('mensagem').value;
+
+      const texto = `Olá, quero inscrever meu filho(a):%0AResponsável: ${nome}%0ACriança: ${crianca}%0AIdade: ${idade}%0ATelefone: ${tel}%0AMensagem: ${msg}`;
+      window.open(`https://wa.me/5584987310194?text=${texto}`, '_blank');
+    });
+  </script>
+
+</body>
+</html>
