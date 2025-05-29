@@ -1,40 +1,209 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Escolinha do Professor Lourival</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projeto 2 Toke - Escolinha de Futebol</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f0f0f0;
-      text-align: center;
-      padding: 30px;
+      margin: 0;
+      background-color: #f0f8ff;
+      color: #333;
     }
 
-    h1 {
-      color: #2c3e50;
+    header {
+      background-color: #007BFF;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header img {
+      width: 120px;
+      margin-bottom: 10px;
+      border-radius: 50%;
+    }
+
+    nav {
+      background-color: #0056b3;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    nav a {
+      color: white;
+      padding: 15px 20px;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      background-color: #003f7f;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .contact-buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .contact-buttons a {
+      text-decoration: none;
+      padding: 12px 20px;
+      background-color: #007BFF;
+      color: white;
+      border-radius: 8px;
+      font-weight: bold;
+      width: 200px;
+      text-align: center;
+    }
+
+    .contact-buttons a:hover {
+      background-color: #0056b3;
+    }
+
+    form {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 500px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    input, textarea, button {
+      display: block;
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    footer {
+      background-color: #0056b3;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .gallery img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 8px;
+    }
+
+    .agenda {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .agenda ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .agenda li {
+      margin-bottom: 10px;
     }
 
     video {
-      max-width: 90%;
-      height: auto;
-      margin-top: 20px;
+      max-width: 100%;
       border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    @media (min-width: 600px) {
+      .contact-buttons {
+        flex-direction: row;
+        justify-content: center;
+      }
     }
   </style>
 </head>
 <body>
 
-  <h1>Escolinha do Professor Lourival</h1>
-  <p>Bem-vindo ao nosso site oficial!</p>
+  <header>
+    <img src="https://i.imgur.com/CmBvayF.png" alt="Logo Projeto 2 Toke" />
+    <h1>Escolinha Projeto 2 Toke</h1>
+    <p><em>Inscrições Abertas - Crianças de 5 a 12 anos</em></p>
+  </header>
 
-  <h2>🎥 Vídeo do Treino</h2>
-  <video controls>
-    <source src="video.mp4" type="video/mp4">
-    Seu navegador não suporta vídeo.
-  </video>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#fotos">Fotos</a>
+    <a href="#video">Vídeo</a>
+    <a href="#agenda">Agenda</a>
+    <a href="#contato">Contato</a>
+    <a href="#formulario">Inscrição</a>
+  </nav>
 
-</body>
-</html>
+  <main>
+    <section id="home" class="section">
+      <h2>Bem-vindo à Escolinha de Futebol</h2>
+      <p>Nosso projeto visa desenvolver o esporte e a disciplina em crianças de 5 a 12 anos, promovendo saúde, socialização e valores através do futebol.</p>
+    </section>
+
+    <section id="sobre" class="section">
+      <h2>Sobre o Professor</h2>
+      <p>Sou o Professor Lourival, apaixonado por esportes e dedicado ao desenvolvimento das crianças por meio do futebol. Com anos de experiência, tenho orgulho de liderar o Projeto 2 Toke.</p>
+    </section>
+
+    <section id="fotos" class="section">
+      <h2>Galeria de Fotos</h2>
+      <div class="gallery">
+        <img src="https://i.imgur.com/zS0RJpM.jpg" alt="Crianças jogando futebol 1">
+        <img src="https://i.imgur.com/KrxuOqV.jpg" alt="Crianças jogando futebol 2">
+        <img src="https://i.imgur.com/AtxyAXS.jpg" alt="Crianças treinando com cones">
+        <img src="https://i.imgur.com/dj9uXfR.jpg" alt="Crianças chutando a bola">
+        <img src="https://i.imgur.com/qa6vpcO.jpg" alt="Grupo reunido após treino">
+      </div>
+    </section>
+
+    <section id="video" class="section">
+      <h2>🎥 Vídeo dos Treinos</h2>
+      <video controls>
+        <source src="video.mp4" type="video/mp4">
+        Seu navegador não suporta a reprodução de vídeo.
+      </video>
+    </section>
+
+    <section id="agenda" class="section">
+      <h2>Agenda de Treinos</h2>
+      <div class="agenda">
+        <ul>
+          <li><strong>Segunda, Quarta
