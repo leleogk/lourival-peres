@@ -44,6 +44,8 @@
 
     main {
       padding: 20px;
+      max-width: 900px;
+      margin: auto;
     }
 
     .section {
@@ -86,6 +88,7 @@
       font-weight: bold;
       width: 200px;
       text-align: center;
+      transition: background-color 0.3s;
     }
 
     .contact-buttons a:hover {
@@ -99,6 +102,11 @@
       max-width: 500px;
       margin: auto;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: left;
+    }
+
+    form label {
+      font-weight: bold;
     }
 
     input, textarea, button {
@@ -108,6 +116,8 @@
       padding: 10px;
       border-radius: 4px;
       border: 1px solid #ccc;
+      font-size: 1rem;
+      box-sizing: border-box;
     }
 
     button {
@@ -115,6 +125,8 @@
       color: white;
       border: none;
       cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s;
     }
 
     button:hover {
@@ -126,6 +138,40 @@
       color: white;
       text-align: center;
       padding: 20px;
+      margin-top: 40px;
+    }
+
+    /* Novo estilo para tabela de horários e mensalidade */
+    .info-tabela {
+      max-width: 600px;
+      margin: 0 auto 40px auto;
+      text-align: left;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .info-tabela h3 {
+      margin-top: 0;
+      color: #007BFF;
+      text-align: center;
+    }
+
+    .info-tabela table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .info-tabela th, .info-tabela td {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .info-tabela th {
+      background-color: #007BFF;
+      color: white;
+      text-align: left;
     }
 
     @media (min-width: 600px) {
@@ -138,7 +184,7 @@
 </head>
 <body>
   <header>
-    <img src="https://i.imgur.com/CmBvayF.png" alt="Logo Projeto 2 Toke" />
+    <img src="https://i.imgur.com/CmBvayF.png" alt="Logo da Escolinha Projeto 2 Toke" />
     <h1>Escolinha Projeto 2 Toke</h1>
     <p><em>Formando campeões com educação e disciplina</em></p>
   </header>
@@ -146,6 +192,7 @@
   <nav>
     <a href="#home">Home</a>
     <a href="#sobre">Sobre</a>
+    <a href="#horarios">Horários & Mensalidade</a>
     <a href="#contato">Contato</a>
     <a href="#formulario">Inscrição</a>
   </nav>
@@ -164,32 +211,84 @@
       <p>Realizamos treinos semanais com acompanhamento técnico, promovendo atividades físicas e sociais. Também participamos de campeonatos e eventos esportivos com foco na formação cidadã das crianças.</p>
     </section>
 
+    <section id="horarios" class="section">
+      <h2>Horários & Mensalidade</h2>
+      <div class="info-tabela">
+        <h3>Mensalidade</h3>
+        <p><strong>Aluno novo:</strong> R$ 40,00</p>
+        <p><strong>Horários de Treinos:</strong></p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Atividade</th>
+              <th>Dias</th>
+              <th>Horário</th>
+              <th>Local</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Funcional</td>
+              <td>Segunda, Quarta e Sexta</td>
+              <td>19:30 às 20:30</td>
+              <td>Espaço Meu Xodó (ao lado da Asseplan)</td>
+            </tr>
+            <tr>
+              <td>Escolinha Planalto</td>
+              <td>Segunda, Quarta e Sexta</td>
+              <td>17:30 às 19:00</td>
+              <td>Espaço Meu Xodó (ao lado da Asseplan)</td>
+            </tr>
+            <tr>
+              <td>Escolinha São José</td>
+              <td>Terça e Quinta (manhã)</td>
+              <td>08:00 às 09:30</td>
+              <td>Espaço Meu Xodó (ao lado da Asseplan)</td>
+            </tr>
+            <tr>
+              <td>Escolinha São José</td>
+              <td>Terça (tarde)</td>
+              <td>17:00 às 18:30</td>
+              <td>Espaço Meu Xodó (ao lado da Asseplan)</td>
+            </tr>
+            <tr>
+              <td>Escolinha São José</td>
+              <td>Quinta (tarde)</td>
+              <td>16:30 às 17:30</td>
+              <td>Espaço Meu Xodó (ao lado da Asseplan)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
     <section id="contato" class="section">
       <h2>Fale Conosco</h2>
       <div class="contact-buttons">
-        <a href="https://wa.me/5584987310194" target="_blank">WhatsApp</a>
-        <a href="https://www.instagram.com/projeto2toke2" target="_blank">Instagram</a>
-        <a href="mailto:peresferreira2006@yahoo.com.br" target="_blank">Gmail</a>
+        <a href="https://wa.me/5584987310194" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <a href="https://www.instagram.com/projeto2toke2" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="mailto:peresferreira2006@yahoo.com.br" target="_blank" rel="noopener noreferrer">Gmail</a>
       </div>
     </section>
 
     <section id="formulario" class="section">
       <h2>Inscreva Seu Filho</h2>
-      <form id="form-inscricao">
+      <form id="form-inscricao" novalidate>
         <label for="nome">Nome do Responsável:</label>
-        <input type="text" id="nome" required />
+        <input type="text" id="nome" name="nome" required placeholder="Seu nome completo" />
 
         <label for="nome-crianca">Nome da Criança:</label>
-        <input type="text" id="nome-crianca" required />
+        <input type="text" id="nome-crianca" name="nome-crianca" required placeholder="Nome da criança" />
 
         <label for="idade">Idade da Criança:</label>
-        <input type="number" id="idade" required min="5" max="12" />
+        <input type="number" id="idade" name="idade" required min="5" max="12" placeholder="5 a 12 anos" />
 
         <label for="telefone">Telefone de Contato:</label>
-        <input type="tel" id="telefone" required />
+        <input type="tel" id="telefone" name="telefone" required pattern="^\+?[\d\s\-\(\)]{8,}$" placeholder="+55 (84) 98731-0194" />
 
         <label for="mensagem">Mensagem (opcional):</label>
-        <textarea id="mensagem"></textarea>
+        <textarea id="mensagem" name="mensagem" rows="3" placeholder="Informações adicionais"></textarea>
 
         <button type="submit">Enviar via WhatsApp</button>
       </form>
@@ -203,13 +302,24 @@
   <script>
     document.getElementById('form-inscricao').addEventListener('submit', function(e) {
       e.preventDefault();
-      const nome = document.getElementById('nome').value;
-      const crianca = document.getElementById('nome-crianca').value;
-      const idade = document.getElementById('idade').value;
-      const tel = document.getElementById('telefone').value;
-      const msg = document.getElementById('mensagem').value;
 
-      const texto = `Olá, gostaria de inscrever meu filho(a):%0AResponsável: ${nome}%0ACriança: ${crianca}%0AIdade: ${idade}%0ATelefone: ${tel}%0AMensagem: ${msg}`;
+      const nome = document.getElementById('nome').value.trim();
+      const crianca = document.getElementById('nome-crianca').value.trim();
+      const idade = document.getElementById('idade').value.trim();
+      const tel = document.getElementById('telefone').value.trim();
+      const msg = document.getElementById('mensagem').value.trim();
+
+      if (!nome || !crianca || !idade || !tel) {
+        alert('Por favor, preencha todos os campos obrigatórios.');
+        return;
+      }
+
+      // Monta mensagem com encodeURIComponent para evitar erros na URL
+      let texto = `Olá, gostaria de inscrever meu filho(a):%0AResponsável: ${encodeURIComponent(nome)}%0ACriança: ${encodeURIComponent(crianca)}%0AIdade: ${encodeURIComponent(idade)}%0ATelefone: ${encodeURIComponent(tel)}`;
+
+      if (msg !== '') {
+        texto += `%0AMensagem: ${encodeURIComponent(msg)}`;
+      }
 
       window.open(`https://wa.me/5584987310194?text=${texto}`, '_blank');
     });
