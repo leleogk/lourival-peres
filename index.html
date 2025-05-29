@@ -305,19 +305,21 @@
           <p><strong>Endereço:</strong> Rua São José, 1815, Campo Society</p>
           <p><strong>Horários:</strong></p>
           <ul>
-            <li>Segunda e Quarta: 17h às 19h</li>
-            <li>Sábado: 9h às 11h</li>
+            <li>Terça e Quinta: 8h às 9h30</li>
+            <li>Terça: 17h às 18h30</li>
+            <li>Quinta: 16h30 às 17h30</li>
           </ul>
+          <p><strong>Mensalidade:</strong> R$ 130,00</p>
         </div>
 
         <div class="horario-box">
-          <h3>Campo Asseplan (Funcionário)</h3>
-          <p><strong>Endereço:</strong> Campo Asseplan, Planalto</p>
+          <h3>Funcionário (Ao lado da Asseplan)</h3>
+          <p><strong>Endereço:</strong> Espaço Meu Xodó, ao lado da Asseplan</p>
           <p><strong>Horários:</strong></p>
           <ul>
-            <li>Terça e Quinta: 17h às 19h</li>
-            <li>Sábado: 14h às 16h</li>
+            <li>Segunda, Quarta e Sexta: 19h30 às 20h30</li>
           </ul>
+          <p><strong>Mensalidade:</strong> R$ 40,00</p>
         </div>
 
         <div class="horario-box">
@@ -325,9 +327,9 @@
           <p><strong>Endereço:</strong> Campo Asseplan, Planalto</p>
           <p><strong>Horários:</strong></p>
           <ul>
-            <li>Segunda, Quarta e Sexta: 17h às 19h</li>
-            <li>Sábado: 8h às 10h</li>
+            <li>Segunda, Quarta e Sexta: 17h30 às 19h</li>
           </ul>
+          <p><strong>Mensalidade:</strong> R$ 100,00</p>
         </div>
       </div>
     </section>
@@ -337,23 +339,25 @@
       <p>Entre em contato conosco para dúvidas, informações e inscrições.</p>
 
       <div class="contact-buttons">
-        <a href="https://wa.me/84987310194" target="_blank" rel="noopener noreferrer">WhatsApp: (84) 98731-0194</a>
-        <a href="https://www.instagram.com/projeto2toke2" target="_blank" rel="noopener noreferrer">Instagram: @projeto2toke2</a>
-        <a href="mailto:peresferreira2006@yahoo.com.br" target="_blank" rel="noopener noreferrer">Email: peresferreira2006@yahoo.com.br</a>
+        <a href="https://wa.me/5584987310194" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Projeto 2 Toke">WhatsApp: (84) 98731-0194</a>
+        <a href="https://www.instagram.com/projeto2toke2" target="_blank" rel="noopener noreferrer" aria-label="Instagram Projeto 2 Toke">@projeto2toke2</a>
+        <a href="mailto:peresferreira2006@yahoo.com.br" target="_blank" rel="noopener noreferrer" aria-label="Email Projeto 2 Toke">Email: peresferreira2006@yahoo.com.br</a>
+        <a href="https://www.instagram.com/chuplanche2016" target="_blank" rel="noopener noreferrer" aria-label="Instagram Auxiliar Escolinha">Instagram Auxiliar</a>
+        <a href="https://wa.me/5584996447477" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Auxiliar">WhatsApp Auxiliar: (84) 99644-7477</a>
       </div>
     </section>
 
     <section id="formulario" class="section">
       <h2>Formulário de Inscrição</h2>
-      <form id="inscricaoForm">
+      <form id="inscricaoForm" aria-label="Formulário de inscrição">
         <label for="nome">Nome Completo</label>
-        <input type="text" id="nome" name="nome" required />
+        <input type="text" id="nome" name="nome" required autocomplete="name" />
 
         <label for="idade">Idade</label>
         <input type="number" id="idade" name="idade" min="5" max="14" required />
 
         <label for="responsavel">Nome do Responsável</label>
-        <input type="text" id="responsavel" name="responsavel" required />
+        <input type="text" id="responsavel" name="responsavel" required autocomplete="name" />
 
         <label for="telefone">Telefone para Contato</label>
         <input type="tel" id="telefone" name="telefone" pattern="[0-9\s\-\+\(\)]{8,15}" required placeholder="Ex: (84) 98731-0194" />
@@ -361,7 +365,7 @@
         <label for="info">Informações Adicionais</label>
         <textarea id="info" name="info" placeholder="Alguma informação extra?" rows="4"></textarea>
 
-        <button type="submit">Enviar Inscrição via WhatsApp</button>
+        <button type="submit" aria-label="Enviar inscrição via WhatsApp">Enviar Inscrição via WhatsApp</button>
       </form>
     </section>
   </main>
@@ -376,7 +380,7 @@
       event.preventDefault();
 
       const nome = encodeURIComponent(form.nome.value.trim());
-      const idade = encodeURIComponent(form.idade.value.trim());
+      const idade = Number(form.idade.value.trim());
       const responsavel = encodeURIComponent(form.responsavel.value.trim());
       const telefone = encodeURIComponent(form.telefone.value.trim());
       const info = encodeURIComponent(form.info.value.trim());
@@ -386,20 +390,16 @@
         return;
       }
 
-      // Monta a mensagem para WhatsApp
       const mensagem = 
         `*Inscrição - Escolinha do Professor Lourival*%0A` +
         `%0A*Nome do Atleta:* ${nome}%0A*Idade:* ${idade} anos%0A` +
         `*Responsável:* ${responsavel}%0A*Telefone:* ${telefone}%0A` +
         `*Informações adicionais:* ${info || 'Nenhuma'}`;
 
-      // Número para envio da mensagem (com código do país, sem espaços)
       const numeroWhatsApp = '5584987310194';
 
-      // URL para abrir o WhatsApp com a mensagem pronta
       const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensagem}`;
 
-      // Abre em nova aba
       window.open(urlWhatsApp, '_blank');
     });
   </script>
