@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projeto 2 Toke - Escolinha de Futebol</title>
   <style>
     body {
@@ -20,7 +20,7 @@
     }
 
     header img {
-      width: 120px;
+      width: 100px;
       margin-bottom: 10px;
       border-radius: 50%;
     }
@@ -28,8 +28,8 @@
     nav {
       background-color: #0056b3;
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
+      flex-wrap: wrap;
     }
 
     nav a {
@@ -48,18 +48,25 @@
 
     .section {
       margin-bottom: 40px;
+      text-align: center;
     }
 
-    .video-section {
-      display: flex;
-      justify-content: center;
-      margin: 40px 0;
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
 
-    video {
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
-      max-width: 800px;
-      border-radius: 12px;
+      height: 100%;
     }
 
     .contact-buttons {
@@ -131,38 +138,34 @@
 </head>
 <body>
   <header>
-    <img src="https://i.imgur.com/CmBvayF.png" alt="Logo Projeto 2 Toke">
+    <img src="https://i.imgur.com/CmBvayF.png" alt="Logo Projeto 2 Toke" />
     <h1>Escolinha Projeto 2 Toke</h1>
-    <p><em>Desenvolvendo crianças com esporte e educação</em></p>
+    <p><em>Formando campeões com educação e disciplina</em></p>
   </header>
 
   <nav>
     <a href="#home">Home</a>
-    <a href="#projeto">Projeto</a>
+    <a href="#sobre">Sobre</a>
     <a href="#contato">Contato</a>
-    <a href="#inscricao">Inscrição</a>
+    <a href="#formulario">Inscrição</a>
   </nav>
 
   <main>
     <section id="home" class="section">
       <h2>Quem Somos</h2>
-      <p>Somos o Projeto 2 Toke, uma escolinha de futebol que promove não apenas o esporte, mas também a educação, cidadania e valores para crianças de 5 a 12 anos. Com atividades lúdicas e treinos educativos, formamos atletas e cidadãos.</p>
+      <p>Somos um projeto social e esportivo que acredita no poder do esporte para transformar vidas. Trabalhamos com crianças de 5 a 12 anos, ensinando futebol com foco em educação, respeito, disciplina e trabalho em equipe.</p>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/1BBmQA5mWTs" title="Vídeo de Crianças Jogando Futebol" frameborder="0" allowfullscreen></iframe>
+      </div>
     </section>
 
-    <section class="video-section">
-      <video controls>
-        <source src="https://cdn.pixabay.com/video/2023/11/15/193093_large.mp4" type="video/mp4">
-        Seu navegador não suporta vídeo.
-      </video>
-    </section>
-
-    <section id="projeto" class="section">
-      <h2>Sobre o Projeto</h2>
-      <p>O projeto conta com a liderança do Professor Lourival e uma equipe técnica preparada para trabalhar não apenas as habilidades esportivas, mas também o respeito, disciplina e o espírito de equipe entre os alunos.</p>
+    <section id="sobre" class="section">
+      <h2>Nosso Trabalho</h2>
+      <p>Realizamos treinos semanais com acompanhamento técnico, promovendo atividades físicas e sociais. Também participamos de campeonatos e eventos esportivos com foco na formação cidadã das crianças.</p>
     </section>
 
     <section id="contato" class="section">
-      <h2>Contato</h2>
+      <h2>Fale Conosco</h2>
       <div class="contact-buttons">
         <a href="https://wa.me/5584987310194" target="_blank">WhatsApp</a>
         <a href="https://www.instagram.com/projeto2toke2" target="_blank">Instagram</a>
@@ -170,22 +173,22 @@
       </div>
     </section>
 
-    <section id="inscricao" class="section">
-      <h2>Formulário de Inscrição</h2>
+    <section id="formulario" class="section">
+      <h2>Inscreva Seu Filho</h2>
       <form id="form-inscricao">
         <label for="nome">Nome do Responsável:</label>
-        <input type="text" id="nome" required>
+        <input type="text" id="nome" required />
 
         <label for="nome-crianca">Nome da Criança:</label>
-        <input type="text" id="nome-crianca" required>
+        <input type="text" id="nome-crianca" required />
 
         <label for="idade">Idade da Criança:</label>
-        <input type="number" id="idade" required min="5" max="12">
+        <input type="number" id="idade" required min="5" max="12" />
 
-        <label for="telefone">Telefone:</label>
-        <input type="tel" id="telefone" required>
+        <label for="telefone">Telefone de Contato:</label>
+        <input type="tel" id="telefone" required />
 
-        <label for="mensagem">Mensagem:</label>
+        <label for="mensagem">Mensagem (opcional):</label>
         <textarea id="mensagem"></textarea>
 
         <button type="submit">Enviar via WhatsApp</button>
@@ -194,7 +197,7 @@
   </main>
 
   <footer>
-    <p>&copy; 2025 Projeto 2 Toke | Desenvolvido com carinho pelo Professor Lourival</p>
+    <p>&copy; 2025 Projeto 2 Toke | Desenvolvido com carinho por Professor Lourival</p>
   </footer>
 
   <script>
