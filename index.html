@@ -2,406 +2,217 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Escolinha do Professor Lourival</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Escolinha Projeto 2 Toke</title>
   <style>
-    /* Reset básico */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #121212;
-      color: #e0e0e0;
-      line-height: 1.6;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      background-color: #f4f9ff;
+      color: #333;
     }
 
     header {
-      background: linear-gradient(90deg, #0d47a1, #1976d2);
-      padding: 30px 20px;
+      background-color: #007BFF;
+      color: white;
       text-align: center;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
-    }
-
-    header img {
-      width: 110px;
-      border-radius: 50%;
-      border: 3px solid #64b5f6;
-      margin-bottom: 15px;
-      filter: drop-shadow(0 0 5px #64b5f6);
+      padding: 30px 20px;
     }
 
     header h1 {
-      font-size: 2.8rem;
-      font-weight: 700;
-      color: #bbdefb;
-      margin-bottom: 8px;
-      text-shadow: 1px 1px 4px #0d47a1;
+      margin: 10px 0 5px;
+      font-size: 26px;
     }
 
     header p {
-      font-style: italic;
-      color: #90caf9;
-      font-weight: 500;
-      text-shadow: 1px 1px 3px #0d47a1;
+      font-size: 16px;
+      margin: 0;
     }
 
     nav {
-      background-color: #0d47a1;
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.8);
+      background-color: #0056b3;
     }
 
     nav a {
-      color: #e3f2fd;
-      padding: 18px 28px;
+      color: white;
       text-decoration: none;
-      font-weight: 600;
-      font-size: 1.1rem;
-      transition: background-color 0.3s ease;
+      padding: 15px 20px;
     }
 
-    nav a:hover,
-    nav a:focus {
-      background-color: #1565c0;
-      outline: none;
+    nav a:hover {
+      background-color: #003f7f;
     }
 
     main {
-      flex-grow: 1;
-      max-width: 960px;
-      margin: 40px auto;
-      padding: 0 20px;
+      padding: 20px;
     }
 
-    .section {
-      margin-bottom: 50px;
-      text-align: center;
+    section {
+      margin-bottom: 40px;
     }
 
     h2 {
-      font-size: 2.4rem;
-      color: #64b5f6;
-      margin-bottom: 20px;
-      text-shadow: 0 0 8px #42a5f5;
+      color: #0056b3;
+      margin-bottom: 10px;
     }
 
-    p {
-      font-size: 1.1rem;
-      max-width: 700px;
-      margin: 0 auto 15px;
-      color: #cfd8dc;
-    }
-
-    .horarios-container {
+    .gallery {
       display: flex;
       flex-wrap: wrap;
+      gap: 10px;
       justify-content: center;
-      gap: 30px;
-      margin-top: 25px;
-      text-align: left;
     }
 
-    .horario-box {
-      background: #1e1e1e;
-      border: 2px solid #1976d2;
-      border-radius: 12px;
-      padding: 25px 30px;
-      box-shadow: 0 0 15px #1976d2;
-      flex: 1 1 320px;
-      max-width: 340px;
-      transition: transform 0.3s ease;
-    }
-
-    .horario-box:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 0 25px #42a5f5;
-    }
-
-    .horario-box h3 {
-      color: #90caf9;
-      margin-bottom: 14px;
-      font-size: 1.6rem;
-      border-bottom: 2px solid #42a5f5;
-      padding-bottom: 6px;
-    }
-
-    .horario-box p,
-    .horario-box ul {
-      color: #b0bec5;
-      font-size: 1rem;
-      line-height: 1.4;
-    }
-
-    .horario-box ul {
-      list-style-type: disc;
-      margin-left: 20px;
-      padding-left: 0;
+    .gallery img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 8px;
     }
 
     .contact-buttons {
       display: flex;
-      flex-direction: column;
-      align-items: center;
+      justify-content: center;
       gap: 15px;
-      margin-top: 20px;
+      flex-wrap: wrap;
+      margin-top: 15px;
     }
 
     .contact-buttons a {
-      display: inline-block;
+      padding: 12px 20px;
+      border-radius: 6px;
+      color: white;
+      font-weight: bold;
       text-decoration: none;
-      padding: 14px 26px;
-      background: #1976d2;
-      color: #e3f2fd;
-      font-weight: 700;
-      border-radius: 8px;
-      width: 220px;
-      text-align: center;
-      font-size: 1.1rem;
-      box-shadow: 0 4px 12px rgba(25, 118, 210, 0.8);
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .contact-buttons a:hover,
-    .contact-buttons a:focus {
-      background-color: #42a5f5;
-      box-shadow: 0 6px 18px rgba(66, 165, 245, 0.9);
-      outline: none;
-    }
+    .whatsapp { background-color: #25D366; }
+    .instagram { background: linear-gradient(to right, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+    .gmail { background-color: #D44638; }
 
     form {
-      background: #1e1e1e;
-      padding: 30px 25px;
-      border-radius: 12px;
-      max-width: 520px;
-      margin: 0 auto;
-      box-shadow: 0 0 25px #1976d2;
-      text-align: left;
+      max-width: 500px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
 
-    label {
-      font-weight: 700;
-      margin-bottom: 8px;
-      display: block;
-      color: #90caf9;
-      font-size: 1.1rem;
-    }
-
-    input,
-    textarea {
+    input, textarea, button {
       width: 100%;
-      padding: 12px 14px;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
       border-radius: 6px;
-      border: 2px solid #1976d2;
-      background-color: #121212;
-      color: #e0e0e0;
-      font-size: 1rem;
-      margin-bottom: 20px;
-      transition: border-color 0.3s ease;
-    }
-
-    input:focus,
-    textarea:focus {
-      border-color: #42a5f5;
-      outline: none;
-      box-shadow: 0 0 10px #42a5f5;
-    }
-
-    textarea {
-      resize: vertical;
-      min-height: 90px;
     }
 
     button {
-      width: 100%;
-      background-color: #1976d2;
-      color: #e3f2fd;
-      font-weight: 700;
-      font-size: 1.2rem;
-      padding: 14px 0;
+      background-color: #007BFF;
+      color: white;
       border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      box-shadow: 0 5px 15px rgba(25, 118, 210, 0.7);
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
     }
 
-    button:hover,
-    button:focus {
-      background-color: #42a5f5;
-      box-shadow: 0 7px 20px rgba(66, 165, 245, 0.9);
-      outline: none;
+    button:hover {
+      background-color: #0056b3;
     }
 
     footer {
-      background-color: #0d47a1;
-      color: #e3f2fd;
       text-align: center;
-      padding: 25px 20px;
-      font-size: 1rem;
-      box-shadow: 0 -4px 10px rgba(0,0,0,0.8);
-      margin-top: auto;
+      padding: 20px;
+      background-color: #0056b3;
+      color: white;
     }
 
-    /* Responsividade */
-    @media (min-width: 768px) {
-      nav {
-        justify-content: center;
-      }
-
-      .contact-buttons {
-        flex-direction: row;
-        justify-content: center;
-      }
-    }
-
-    @media (max-width: 480px) {
-      h2 {
-        font-size: 2rem;
-      }
-
-      nav a {
-        padding: 14px 16px;
-        font-size: 1rem;
-      }
+    @media(max-width: 600px) {
+      header h1 { font-size: 22px; }
+      nav a { padding: 10px; font-size: 14px; }
     }
   </style>
 </head>
 <body>
+
   <header>
-    <img src="https://i.imgur.com/CmBvayF.png" alt="Logo Projeto 2 Toke" />
-    <h1>Escolinha do Professor Lourival</h1>
-    <p><em>Formando campeões com educação e disciplina</em></p>
+    <h1>Escolinha Projeto 2 Toke</h1>
+    <p>Inscrições Abertas - Crianças de 5 a 12 anos</p>
   </header>
 
   <nav>
     <a href="#home">Home</a>
     <a href="#sobre">Sobre</a>
+    <a href="#fotos">Fotos</a>
     <a href="#contato">Contato</a>
-    <a href="#formulario">Inscrição</a>
+    <a href="#inscricao">Inscrição</a>
   </nav>
 
   <main>
-    <section id="home" class="section">
-      <h2>Quem Somos</h2>
-      <p>Somos um projeto social e esportivo que acredita no poder do esporte para transformar vidas. Trabalhamos com atletas de 5 a 14 anos, ensinando futebol com foco em educação, respeito, disciplina e trabalho em equipe.</p>
+    <section id="home">
+      <h2>Bem-vindo à Escolinha de Futebol</h2>
+      <p>Nosso projeto visa desenvolver o esporte e a disciplina em crianças de 5 a 12 anos, promovendo saúde, socialização e valores através do futebol.</p>
     </section>
 
-    <section id="sobre" class="section">
-      <h2>Nosso Trabalho</h2>
-      <p>Realizamos treinos semanais com acompanhamento técnico, promovendo atividades físicas e sociais. Também participamos de amistosos e eventos esportivos com foco na formação cidadã das crianças.</p>
+    <section id="sobre">
+      <h2>Sobre o Professor</h2>
+      <p>Sou o Professor Lourival, apaixonado por esportes e dedicado ao desenvolvimento das crianças por meio do futebol. Com anos de experiência, tenho orgulho de liderar o Projeto 2 Toke.</p>
+    </section>
 
-      <div class="horarios-container">
-        <div class="horario-box">
-          <h3>Escolinha São José</h3>
-          <p><strong>Endereço:</strong> Rua São José, 1815, Campo Society</p>
-          <p><strong>Horários:</strong></p>
-          <ul>
-            <li>Terça e Quinta: 8h às 9h30</li>
-            <li>Terça: 17h às 18h30</li>
-            <li>Quinta: 16h30 às 17h30</li>
-          </ul>
-          <p><strong>Mensalidade:</strong> R$ 130,00</p>
-        </div>
-
-        <div class="horario-box">
-          <h3>Funcionário (Ao lado da Asseplan)</h3>
-          <p><strong>Endereço:</strong> Espaço Meu Xodó, ao lado da Asseplan</p>
-          <p><strong>Horários:</strong></p>
-          <ul>
-            <li>Segunda, Quarta e Sexta: 19h30 às 20h30</li>
-          </ul>
-          <p><strong>Mensalidade:</strong> R$ 40,00</p>
-        </div>
-
-        <div class="horario-box">
-          <h3>Projeto 2 Toke Planalto</h3>
-          <p><strong>Endereço:</strong> Campo Asseplan, Planalto</p>
-          <p><strong>Horários:</strong></p>
-          <ul>
-            <li>Segunda, Quarta e Sexta: 17h30 às 19h</li>
-          </ul>
-          <p><strong>Mensalidade:</strong> R$ 100,00</p>
-        </div>
+    <section id="fotos">
+      <h2>Galeria de Fotos</h2>
+      <div class="gallery">
+        <img src="https://source.unsplash.com/300x200/?kids,soccer" alt="Crianças jogando futebol">
+        <img src="https://source.unsplash.com/301x200/?children,soccer" alt="Treino de futebol infantil">
+        <img src="https://source.unsplash.com/302x200/?football,kids" alt="Partida da escolinha">
       </div>
     </section>
 
-    <section id="contato" class="section">
+    <section id="contato">
       <h2>Contato</h2>
-      <p>Entre em contato conosco para dúvidas, informações e inscrições.</p>
-
       <div class="contact-buttons">
-        <a href="https://wa.me/5584987310194" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Projeto 2 Toke">WhatsApp: (84) 98731-0194</a>
-        <a href="https://www.instagram.com/projeto2toke2" target="_blank" rel="noopener noreferrer" aria-label="Instagram Projeto 2 Toke">@projeto2toke2</a>
-        <a href="mailto:peresferreira2006@yahoo.com.br" target="_blank" rel="noopener noreferrer" aria-label="Email Projeto 2 Toke">Email: peresferreira2006@yahoo.com.br</a>
-        <a href="https://www.instagram.com/chuplanche2016" target="_blank" rel="noopener noreferrer" aria-label="Instagram Auxiliar Escolinha">Instagram Auxiliar</a>
-        <a href="https://wa.me/5584996447477" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Auxiliar">WhatsApp Auxiliar: (84) 99644-7477</a>
+        <a class="whatsapp" href="https://wa.me/5584987310194" target="_blank">WhatsApp</a>
+        <a class="instagram" href="https://www.instagram.com/projeto2toke2" target="_blank">Instagram</a>
+        <a class="gmail" href="mailto:peresferreira2006@yahoo.com.br" target="_blank">Gmail</a>
       </div>
     </section>
 
-    <section id="formulario" class="section">
-      <h2>Formulário de Inscrição</h2>
-      <form id="inscricaoForm" aria-label="Formulário de inscrição">
-        <label for="nome">Nome Completo</label>
-        <input type="text" id="nome" name="nome" required autocomplete="name" />
-
-        <label for="idade">Idade</label>
-        <input type="number" id="idade" name="idade" min="5" max="14" required />
-
-        <label for="responsavel">Nome do Responsável</label>
-        <input type="text" id="responsavel" name="responsavel" required autocomplete="name" />
-
-        <label for="telefone">Telefone para Contato</label>
-        <input type="tel" id="telefone" name="telefone" pattern="[0-9\s\-\+\(\)]{8,15}" required placeholder="Ex: (84) 98731-0194" />
-
-        <label for="info">Informações Adicionais</label>
-        <textarea id="info" name="info" placeholder="Alguma informação extra?" rows="4"></textarea>
-
-        <button type="submit" aria-label="Enviar inscrição via WhatsApp">Enviar Inscrição via WhatsApp</button>
+    <section id="inscricao">
+      <h2>Inscrição Rápida</h2>
+      <form id="formulario">
+        <input type="text" id="nomeResponsavel" placeholder="Nome do Responsável" required />
+        <input type="text" id="nomeCrianca" placeholder="Nome da Criança" required />
+        <input type="number" id="idadeCrianca" placeholder="Idade da Criança" min="5" max="12" required />
+        <input type="tel" id="telefone" placeholder="Telefone de Contato" required />
+        <textarea id="mensagem" placeholder="Mensagem (opcional)"></textarea>
+        <button type="button" onclick="enviarParaWhatsApp()">Enviar para WhatsApp</button>
       </form>
     </section>
   </main>
 
   <footer>
-    &copy; 2025 Escolinha do Professor Lourival - Todos os direitos reservados
+    <p>&copy; 2025 Escolinha Projeto 2 Toke - Todos os direitos reservados</p>
   </footer>
 
   <script>
-    const form = document.getElementById('inscricaoForm');
-    form.addEventListener('submit', function(event) {
-      event.preventDefault();
+    function enviarParaWhatsApp() {
+      const nomeResponsavel = document.getElementById("nomeResponsavel").value;
+      const nomeCrianca = document.getElementById("nomeCrianca").value;
+      const idadeCrianca = document.getElementById("idadeCrianca").value;
+      const telefone = document.getElementById("telefone").value;
+      const mensagem = document.getElementById("mensagem").value;
 
-      const nome = encodeURIComponent(form.nome.value.trim());
-      const idade = Number(form.idade.value.trim());
-      const responsavel = encodeURIComponent(form.responsavel.value.trim());
-      const telefone = encodeURIComponent(form.telefone.value.trim());
-      const info = encodeURIComponent(form.info.value.trim());
+      const texto = `*Inscrição Projeto 2 Toke*%0A
+Responsável: ${nomeResponsavel}%0A
+Criança: ${nomeCrianca}%0A
+Idade: ${idadeCrianca}%0A
+Telefone: ${telefone}%0A
+Mensagem: ${mensagem}`;
 
-      if(idade < 5 || idade > 14){
-        alert('A idade deve ser entre 5 e 14 anos.');
-        return;
-      }
-
-      const mensagem = 
-        `*Inscrição - Escolinha do Professor Lourival*%0A` +
-        `%0A*Nome do Atleta:* ${nome}%0A*Idade:* ${idade} anos%0A` +
-        `*Responsável:* ${responsavel}%0A*Telefone:* ${telefone}%0A` +
-        `*Informações adicionais:* ${info || 'Nenhuma'}`;
-
-      const numeroWhatsApp = '5584987310194';
-
-      const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensagem}`;
-
-      window.open(urlWhatsApp, '_blank');
-    });
+      const numero = "5584987310194"; // número da escolinha com DDI +55
+      const url = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
+      window.open(url, '_blank');
+    }
   </script>
+
 </body>
 </html>
